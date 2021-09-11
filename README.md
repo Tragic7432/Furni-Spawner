@@ -7,3 +7,6 @@ https://www.habbo.com/gamedata/furnidata_json/1
 
 # Install g-python
 https://github.com/sirjonasxx/G-Python
+
+
+Numpy.random packages --> `pip install numpy`
