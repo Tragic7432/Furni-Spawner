@@ -9,4 +9,4 @@ https://www.habbo.com/gamedata/furnidata_json/1
 https://github.com/sirjonasxx/G-Python
 
 
-Numpy.random packages --> `pip install numpy`
+Numpy.random  --> `pip install numpy`
