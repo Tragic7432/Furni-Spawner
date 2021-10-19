@@ -1,8 +1,6 @@
 from tkinter import *
 from g_python.gextension import Extension
 from g_python.hpacket import HPacket
-from numpy.random import seed
-from numpy.random import randint
 
 extension_info = {
     "title": "Furni Spawner",
@@ -12,20 +10,23 @@ extension_info = {
 }
 
 extension_settings = {
-    "use_click_trigger": True,
+    "use_click_trigger": False,
     "can_leave": True,
     "can_delete": True
 }
 ext = Extension(extension_info, args=['-p', '9092'], extension_settings=extension_settings)
 ext.start()
-seed(1)
+
+
+furni_id = 1
 
 def spawnIt():
+   global furni_id
    item_id = itemid.get()
-   furni_id = randint(1, 999)
    x_loc = xloc.get()
    y_loc = yloc.get()
-   ext.send_to_client(HPacket('ObjectAdd', furni_id, item_id, x_loc, y_loc, 0, '0.00', '1.0', 0, 0, '0', -1, 1, 5896864, 'admin'))
+   ext.send_to_client(HPacket('ObjectAdd',furni_id, item_id, x_loc, y_loc, 0, '0.00', '1.0', 0, 0, '0', -1, 1, 5896864, 'admin'))
+   furni_id += 1
 
 
 window = Tk()
